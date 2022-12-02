@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="mb-3">
+		<a href="/answer/create/{{ question.id }}" {# onclick="return confirm('Est-ce que vous voulez réellement créer un quiz ?');" #} class="btn btn-primary">Créer une reponse</a>
+	</div>
+	{% for answer in answers %}
+    <p>{{ answer.proposition }}, {{ answer.isValid }}</p>
+
+
+	{% endfor %}
+
+{% endblock %}
+

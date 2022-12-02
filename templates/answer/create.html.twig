@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <h3>Les réponses aux questions :</h3>
+	{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+	{{ form_row(form.proposition) }}
+    {{ form_row(form.isValid) }}
+	<button type="submit" class="btn btn-primary">Créer</button>
+	{{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Form;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+
+class ExtendedFieldCollectionType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
+            $form = $event->getForm();
+            $data = $event->getData();
+
+            foreach ($data as $name => $value) {
+                $form->add($value->id, $value->type, ['property_path' => '[' . $name . '].value', // the value property is my setting value]);
+            }
+        });
+    }
+}

@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="mb-3">
+		<a href="/quiz/create/{{ theme.id }}" {# onclick="return confirm('Est-ce que vous voulez réellement créer un quiz ?');" #} class="btn btn-primary">Créer un quiz</a>
+	</div>
+
+	{% for quiz in quizs %}
+
+		<p>{{ quiz.name }}</p>
+		<a href="/question/read/{{ quiz.id }}" class="btn btn-secondary">Faire le quiz</a>
+
+		{% if app.user %}
+			{% if app.user == quiz.user %}
+				<a href="/quiz/update/{{ quiz.id }}" class="btn btn-secondary">Modifier le quiz</a>
+				<a href="/question/read-all-by-quiz/{{ quiz.id }}" class="btn btn-warning">Voir les questions</a>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+{% endblock %}

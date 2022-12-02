@@ -1,0 +1,7 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+	{{ form_row(form.name) }}
+	<button type="submit" class="btn btn-primary">Créer</button>
+	{{ form_end(form) }}
+{% endblock %}

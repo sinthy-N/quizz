@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="mb-3">
+		<a href="/quiz/" onclick="return confirm('Est-ce que vous voulez réellement modifier votre publication ?');" class="btn btn-primary"></a>
+	</div>
+
+	{% for quiz in quizs %}
+		<p>{{ quiz.name }}</p>
+	{% endfor %}
+
+{% endblock %}

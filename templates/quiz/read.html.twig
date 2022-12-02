@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	{{dump("test")  }}
+	{% for question in questions %}
+		{{ question.answers.count }}
+
+		{# <form action="/quizAction">
+		
+		</form> #}
+	{# <p>{{ question.content }}</p> #}
+
+		{# {% for answer in question.answers %}
+									<p>
+										<input type="radio" name="" id="">
+										{{ answer.proposition }}
+									</p>
+								{% endfor %} #}
+		{# <a href="/answer/readAnswer/{{ question.id }}" class="btn btn-warning">Voir les propositions</a> #}
+
+		{# <a href="/answer/readAll/{{ answer.id }}" class="btn btn-warning">Terminer</a> #}
+
+	{% endfor %}
+
+{% endblock %}

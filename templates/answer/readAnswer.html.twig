@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+	{% for answer in answers %}
+
+		<p>{{ answer.proposition }}
+			{# {{ answer.isValid }} #}
+		</p>
+
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="isValid" id="flexRadioDefault1">
+			<label class="form-check-label" for="flexRadioDefault1">
+				Vrai
+			</label>
+		</div>
+
+		{# <a href="/question/readQuestion/{{ quiz.id }}" class="btn btn-secondary">Revoir les questions</a> #}
+
+		{# <a href="/answer/readAll/{{ answer.id }}" class="btn btn-warning">Terminer</a> #}
+
+
+	{% endfor %}
+
+{% endblock %}

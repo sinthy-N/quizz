@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="mb-3">
+		<a href="/question/create/{{ quiz.id }}" {# onclick="return confirm('Est-ce que vous voulez réellement créer un quiz ?');" #} class="btn btn-primary">Créer une question</a>
+	</div>
+	
+	{% for question in questions %}
+
+		<p>{{ question.content }}</p>
+		<a href="/answer/read-all-by-question/{{ question.id }}" class="btn btn-warning">Voir les réponses</a>
+
+
+	{% endfor %}
+
+{% endblock %}
